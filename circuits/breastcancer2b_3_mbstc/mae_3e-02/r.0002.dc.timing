@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Fri Aug 30 21:50:38 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_c[1] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  input_c[1] (in)                          0.00       0.00 r
+  U44/Y (NAND2X1)                      2167702.75 2167702.75 f
+  U57/Y (NAND2X1)                      615342.25  2783045.00 r
+  U58/Y (NAND2X1)                      2596496.00 5379541.00 f
+  U49/Y (AND2X1)                       3553559.00 8933100.00 f
+  U50/Y (INVX1)                        -569680.50 8363419.50 r
+  U61/Y (NAND2X1)                      2565348.50 10928768.00 f
+  U70/Y (NAND2X1)                      600289.00  11529057.00 r
+  U72/Y (NAND2X1)                      2805861.00 14334918.00 f
+  U51/Y (AND2X1)                       2826582.00 17161500.00 f
+  U52/Y (INVX1)                        -544957.00 16616543.00 r
+  U73/Y (NAND2X1)                      2268473.00 18885016.00 f
+  U74/Y (NAND2X1)                      619062.00  19504078.00 r
+  U82/Y (NAND2X1)                      1484372.00 20988450.00 f
+  U45/Y (AND2X1)                       3544816.00 24533266.00 f
+  U46/Y (INVX1)                        -564044.00 23969222.00 r
+  U91/Y (NAND2X1)                      2267994.00 26237216.00 f
+  U92/Y (NAND2X1)                      844552.00  27081768.00 r
+  cgp_out[0] (out)                         0.00   27081768.00 r
+  data arrival time                               27081768.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

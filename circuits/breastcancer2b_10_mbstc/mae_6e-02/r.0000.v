@@ -1,0 +1,43 @@
+module cgp(input [1:0] input_a, input [1:0] input_b, input [1:0] input_c, input [1:0] input_d, input [1:0] input_e, output [0:0] cgp_out);
+  wire cgp_core_014;
+  wire cgp_core_015;
+  wire cgp_core_021;
+  wire cgp_core_022;
+  wire cgp_core_026;
+  wire cgp_core_027;
+  wire cgp_core_029_not;
+  wire cgp_core_031;
+  wire cgp_core_032;
+  wire cgp_core_033;
+  wire cgp_core_034;
+  wire cgp_core_035;
+  wire cgp_core_039_not;
+  wire cgp_core_043;
+  wire cgp_core_044;
+  wire cgp_core_046_not;
+  wire cgp_core_050;
+  wire cgp_core_051;
+  wire cgp_core_054;
+
+  assign cgp_core_014 = input_b[1] | input_e[1];
+  assign cgp_core_015 = input_b[1] & input_e[1];
+  assign cgp_core_021 = input_a[1] | cgp_core_014;
+  assign cgp_core_022 = input_a[1] & cgp_core_014;
+  assign cgp_core_026 = cgp_core_015 | cgp_core_022;
+  assign cgp_core_027 = input_c[0] ^ input_d[1];
+  assign cgp_core_029_not = ~input_d[1];
+  assign cgp_core_031 = input_c[1] & input_d[1];
+  assign cgp_core_032 = ~(input_d[1] | input_d[1]);
+  assign cgp_core_033 = input_c[0] & input_d[0];
+  assign cgp_core_034 = cgp_core_031 | cgp_core_033;
+  assign cgp_core_035 = input_c[1] ^ input_e[1];
+  assign cgp_core_039_not = ~cgp_core_034;
+  assign cgp_core_043 = cgp_core_021 & cgp_core_039_not;
+  assign cgp_core_044 = ~(input_d[1] | input_c[1]);
+  assign cgp_core_046_not = ~input_c[0];
+  assign cgp_core_050 = input_e[1] | input_b[1];
+  assign cgp_core_051 = cgp_core_044 | cgp_core_043;
+  assign cgp_core_054 = cgp_core_051 | cgp_core_026;
+
+  assign cgp_out[0] = cgp_core_054;
+endmodule

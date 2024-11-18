@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : cgp
+Version: V-2023.12
+Date   : Fri Aug 30 21:49:58 2024
+****************************************
+
+
+Library(s) Used:
+
+    PPDK_Standard_Library_0.6V_25C_TYP_X1 (File: /homes/kazi/mrazek/bdd-popcount/lib/egfet/db/EGFET_0.6V.db)
+
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.6  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+Attributes
+----------
+i - Including register clock pin internal power
+
+
+  Cell Internal Power  = 745.1635  W   (99%)
+  Net Switching Power  =   5.5782  W    (1%)
+                         ---------
+Total Dynamic Power    = 750.7416  W  (100%)
+
+Cell Leakage Power     = 165.7892 uW
+
+Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)  i
+register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  7.4516e+05        5.5782e+03        1.6579e+05        7.5074e+05  ( 100.00%)
+--------------------------------------------------------------------------------------------------
+Total          7.4516e+05 mW     5.5782e+03 mW     1.6579e+05 nW     7.5074e+05 mW
+1

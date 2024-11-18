@@ -1,0 +1,56 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Fri Aug 30 21:49:24 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_b[0] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_b[0] (in)                          0.00       0.00 f
+  U102/Y (NAND2X1)                     1374153.50 1374153.50 r
+  U114/Y (NAND2X1)                     1463651.00 2837804.50 f
+  U96/Y (AND2X1)                       3546305.00 6384109.50 f
+  U97/Y (INVX1)                        -565042.00 5819067.50 r
+  U80/Y (AND2X1)                       2416949.50 8236017.00 r
+  U81/Y (INVX1)                        1094246.00 9330263.00 f
+  U116/Y (NAND2X1)                     953034.00  10283297.00 r
+  U86/Y (AND2X1)                       2523509.00 12806806.00 r
+  U87/Y (INVX1)                        1299320.00 14106126.00 f
+  U90/Y (XNOR2X1)                      8734062.00 22840188.00 f
+  U91/Y (INVX1)                        -698126.00 22142062.00 r
+  U101/Y (XNOR2X1)                     8160394.00 30302456.00 r
+  U100/Y (INVX1)                       1491568.00 31794024.00 f
+  U121/Y (OR2X1)                       3174296.00 34968320.00 f
+  U122/Y (NAND2X1)                     611424.00  35579744.00 r
+  U72/Y (NAND2X1)                      1490808.00 37070552.00 f
+  U137/Y (NOR2X1)                      1410148.00 38480700.00 r
+  U138/Y (INVX1)                       1213484.00 39694184.00 f
+  U139/Y (NAND2X1)                     952988.00  40647172.00 r
+  U144/Y (NAND2X1)                     1483920.00 42131092.00 f
+  U88/Y (AND2X1)                       2810100.00 44941192.00 f
+  U89/Y (INVX1)                        -561364.00 44379828.00 r
+  U146/Y (NAND2X1)                     2268052.00 46647880.00 f
+  U84/Y (AND2X1)                       3544728.00 50192608.00 f
+  U85/Y (INVX1)                        -571148.00 49621460.00 r
+  U148/Y (NAND2X1)                     2259932.00 51881392.00 f
+  cgp_out[0] (out)                         0.00   51881392.00 f
+  data arrival time                               51881392.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

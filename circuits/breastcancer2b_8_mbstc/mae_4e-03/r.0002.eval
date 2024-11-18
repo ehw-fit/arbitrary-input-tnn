@@ -1,0 +1,13 @@
+inputs 14
+# reference circuits/mbsc2b/breastcancer2b_8_mbstc.cgp loaded at 0.000204
+# test  res_mbsc2b/breastcancer2b_8_mbstc/mae_4e-03/r.0002.cgp loaded at 0.000368
+# subtract created at 0.000602
+Signed: 0
+Core 1 mae: 0.0043335
+Core 1 wc: 2
+EP: 0.0656738
+Core 1 emae: 0.0659851
+# finished at 0.000719
+Area (nodes): 62
+Area (pdk45): 172.702
+Area (egfet): 365.805
