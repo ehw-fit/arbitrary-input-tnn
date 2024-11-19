@@ -17,7 +17,7 @@ class TNNBreastcancer2b(TNNMBbase):
     def get_configs(self):
         return {
             "nodes": 
-{'breastcancer2b_0': [1, -1, 1, -1, -1, -1], 'breastcancer2b_1': [1, -1, 1, 1, 1, 1], 'breastcancer2b_2': [1, 1, 1, 1, -1, -1, 1, 1], 'breastcancer2b_3': [-1, 1, -1, 1, -1], 'breastcancer2b_4': [-1, 1, 1, 1], 'breastcancer2b_5': [1, -1, 1, 1, 1, -1, 1], 'breastcancer2b_6': [1, -1, -1, 1, 1, -1, -1], 'breastcancer2b_7': [1, -1, -1, 1, -1, -1, -1, 1], 'breastcancer2b_8': [1, -1, 1, -1, 1, -1, -1], 'breastcancer2b_9': [-1, -1, 1, 1, 1, -1, 1], 'breastcancer2b_10': [1, 1, -1, -1, 1], 'breastcancer2b_11': [-1, -1, -1, 1, -1, -1, -1, 1, 1]}
+    {'breastcancer2b_0': [1, -1, 1, -1, -1, -1], 'breastcancer2b_1': [1, -1, 1, 1, 1, 1], 'breastcancer2b_2': [1, 1, 1, 1, -1, -1, 1, 1], 'breastcancer2b_3': [-1, 1, -1, 1, -1], 'breastcancer2b_4': [-1, 1, 1, 1], 'breastcancer2b_5': [1, -1, 1, 1, 1, -1, 1], 'breastcancer2b_6': [1, -1, -1, 1, 1, -1, -1], 'breastcancer2b_7': [1, -1, -1, 1, -1, -1, -1, 1], 'breastcancer2b_8': [1, -1, 1, -1, 1, -1, -1], 'breastcancer2b_9': [-1, -1, 1, 1, 1, -1, 1], 'breastcancer2b_10': [1, 1, -1, -1, 1], 'breastcancer2b_11': [-1, -1, -1, 1, -1, -1, -1, 1, 1]}
 ,
             "sums":
 {'popcount_0': 14, 'popcount_1': 14}

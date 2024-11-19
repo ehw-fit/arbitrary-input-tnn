@@ -71,11 +71,11 @@ class TNNMBbase:
             tuple: A tuple containing the absolute paths of the input file and gold file.
         """
         if dataset == "train":
-            inpfile = f"../final_trainsets/{self.dataset_name}_train.memh"
-            goldfile = f"../gold_trainsets/{self.dataset_name}_gold.csv"
+            inpfile = f"final_trainsets/{self.dataset_name}_train.memh"
+            goldfile = f"final_trainsets/{self.dataset_name}_gold.csv"
         elif dataset == "test":
-            inpfile = f"../final_testsets/{self.dataset_name}_test.memh"
-            goldfile = f"../gold_testsets/{self.dataset_name}_gold.csv"
+            inpfile = f"final_testsets/{self.dataset_name}_test.memh"
+            goldfile = f"final_testsets/{self.dataset_name}_gold.csv"
         else:
             raise ValueError("Invalid dataset. Use 'train' or 'test'.")
 
@@ -167,17 +167,18 @@ class TNNMBbase:
 
     def get_accurate_pc(self, n):
         if n == 0: return lambda x: None
-        return UnsignedCGPCircuit(open(f"../../circuits/pc/popcount_{n}.cgp").read(), [n])
+        return UnsignedCGPCircuit(open(f"AxLibrary/exact/pc/popcount_{n}.cgp").read(), [n])
 
     def get_accurate_mbsum(self, node, coefs):
         if self.bw == 1:
-            return PermutationWrapper(func = UnsignedCGPCircuit(open(f"../../circuits/mbsc1b/{node}_mbstc.cgp").read(), [1] * len(coefs)), permutation= range(len(coefs)))
+            raise NotImplemented("tbd")
+            #return PermutationWrapper(func = UnsignedCGPCircuit(open(f"../../circuits/mbsc1b/{node}_mbstc.cgp").read(), [1] * len(coefs)), permutation= range(len(coefs)))
         if self.bw == 2:
-            return UnsignedCGPCircuit(open(f"../../circuits/mbsc2b/{node}_mbstc.cgp").read(), [2] * len(coefs))
+            return UnsignedCGPCircuit(open(f"AxLibrary/exact/{node}_mbstc.cgp").read(), [2] * len(coefs))
         if self.bw == 3:
-            return UnsignedCGPCircuit(open(f"../../circuits/mbsc3b/{node}_mbstc.cgp").read(), [3] * len(coefs))
+            return UnsignedCGPCircuit(open(f"AxLibrary/exact/{node}_mbstc.cgp").read(), [3] * len(coefs))
         if self.bw == 4:
-            return UnsignedCGPCircuit(open(f"../../circuits/mbsc4b/{node}_mbstc.cgp").read(), [4] * len(coefs))
+            return UnsignedCGPCircuit(open(f"AxLibrary/exact/{node}_mbstc.cgp").read(), [4] * len(coefs))
         raise ValueError(f"Invalid bitwidth {self.bw}")
     
     def tnn(self, rfeature_array, config):
