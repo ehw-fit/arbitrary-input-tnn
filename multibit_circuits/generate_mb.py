@@ -1,11 +1,37 @@
+
+
 #%%%
+"""
+Generator of Arithmetic Tree Adders (PopCount-Compare Multibit) using ArithsGen Tool in Python
+=============================================================================================
+This module provides classes and functions to generate arithmetic tree adders and comparators 
+using the ArithsGen tool. The main classes included are `MultibitSum`, `MultibitSumCompare`, 
+`SumTree`, and `MultibitSumTreeCompare`. These classes facilitate the creation of complex 
+arithmetic circuits by recursively combining simpler components such as adders and subtractors.
+Classes:
+--------
+- MultibitSum: 
+    A class to generate a multibit sum circuit based on a given configuration (CNF).
+- MultibitSumCompare: 
+    A class to generate a multibit sum comparator circuit that compares the sum to zero.
+- SumTree: 
+    A class to generate a sum tree circuit that recursively sums a list of input buses.
+- MultibitSumTreeCompare: 
+    A class to generate a multibit sum tree comparator circuit that compares the sum of 
+    positive and negative inputs.
+Usage:
+------
+The classes can be instantiated with specific parameters to generate the desired arithmetic 
+circuits. The generated circuits can be exported to various formats such as Verilog, Python, 
+and CGP (Cartesian Genetic Programming).
+
+
+"""
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-# %%
-df = pd.read_pickle("../neural-network/designs/analyze.pkl.gz")
-df
 # %%
 import os, sys
 
@@ -298,146 +324,21 @@ print(0,  mb(0, 0, 0, 0  ))
 print(1,  mb(0, 1, 0, 0 ))
 print(-1,  mb(0, 0, 0, 1 ))
 
-#%%
-mb = MultibitSum(4, "-++--+--+-+")
-p = np.array([[3, 2, 3, 3, 2, 3, 0, 3, 1, 2, 3, 2, 3, 1, 3, 0],
-       [3, 2, 2, 3, 0, 3, 3, 2, 3, 0, 1, 1, 2, 2, 3, 3],
-       [3, 2, 3, 3, 3, 3, 1, 3, 0, 2, 2, 2, 3, 1, 3, 0],
-       [3, 2, 3, 3, 2, 3, 2, 3, 3, 1, 2, 0, 0, 1, 2, 2],
-       [3, 2, 3, 3, 0, 3, 1, 2, 3, 1, 0, 0, 1, 2, 3, 3],
-       [3, 2, 3, 3, 0, 3, 1, 2, 3, 1, 2, 0, 2, 2, 3, 3],
-       [3, 2, 3, 3, 2, 3, 2, 3, 3, 2, 3, 1, 2, 0, 0, 0],
-       [3, 2, 3, 3, 0, 3, 2, 2, 3, 0, 0, 0, 1, 2, 3, 3],
-       [3, 2, 3, 3, 3, 3, 3, 2, 3, 2, 3, 0, 2, 0, 0, 0],
-       [3, 2, 3, 3, 0, 3, 1, 2, 3, 0, 0, 0, 0, 2, 3, 3],
-       [3, 2, 2, 3, 0, 3, 3, 1, 3, 0, 0, 1, 2, 2, 3, 3],
-       [3, 2, 3, 3, 0, 3, 3, 2, 3, 0, 0, 1, 2, 2, 3, 3]])
 
-mb(*[3, 2, 3, 3, 2, 3, 0, 3, 1, 2, 3, 2, 3, 1, 3, 0])
+# Example of generating circuits for all datasets
+# of bw = 4
 
-#%%
-# 4-bit
-parsedCMP = []
-multibit_datasets = ["breastcancer4b", "redwine4b", "whitewine4b", "cardio4b", "pendigits4b"]
-multibit_datasets = ["pendigits_4b"]
-multibit_datasets = ["pendigits4b_v2"]
-for i, row in df.query("dataset in @multibit_datasets").iterrows():
-    cnf = "".join(x for x,_ in row.features)
-    print(row)
+for uid, cnf in enumerate(["-+-+-+--", "-+--", "-+--", "-+--", "-+--"]):
     print(cnf)
 
     mbs = MultibitSum(4, cnf)
     mbsc = MultibitSumCompare(4, cnf)
     mbstc = MultibitSumTreeCompare(4, cnf)
 
-    mbs.get_cgp_code_flat(open(f"mbsc4b/{row.uname}_mbs.cgp", "w"))
-    open(f"mbsc4b/{row.uname}_conf.txt", "w").write(cnf)
-    row.to_json(open(f"mbsc4b/{row.uname}.json", "w"), indent=2)
-    mbsc.get_cgp_code_flat(open(f"mbsc4b/{row.uname}_mbsc.cgp", "w"))
-    mbstc.get_cgp_code_flat(open(f"mbsc4b/{row.uname}_mbstc.cgp", "w"))
-    mbstc.get_v_code_flat(open(f"mbsc4b/{row.uname}_mbstc.v", "w"))
+    mbs.get_cgp_code_flat(open(f"mbsc4b/{uid}_mbs.cgp", "w"))
+    open(f"mbsc4b/{uid}_conf.txt", "w").write(cnf)
+    mbsc.get_cgp_code_flat(open(f"mbsc4b/{uid}_mbsc.cgp", "w"))
+    mbstc.get_cgp_code_flat(open(f"mbsc4b/{uid}_mbstc.cgp", "w"))
+    mbstc.get_v_code_flat(open(f"mbsc4b/{uid}_mbstc.v", "w"))
     
 
-
-#%%
-# 3-bit
-parsedCMP = []
-multibit_datasets = ["breastcancer3b", "cardio3b", "whitewine3b", "redwine3b", "vertebral3b", "pendigits3b"]
-multibit_datasets = ["pendigits3b_v2"]
-multibit_datasets = ["whitewine3b_v2"]
-for i, row in df.query("dataset in @multibit_datasets").iterrows():
-    cnf = "".join(x for x,_ in row.features)
-    print(row)
-    print(cnf)
-
-    mbs = MultibitSum(3, cnf)
-    mbsc = MultibitSumCompare(3, cnf)
-    mbstc = MultibitSumTreeCompare(3, cnf)
-
-    mbs.get_cgp_code_flat(open(f"mbsc3b/{row.uname}_mbs.cgp", "w"))
-    open(f"mbsc3b/{row.uname}_conf.txt", "w").write(cnf)
-    row.to_json(open(f"mbsc3b/{row.uname}.json", "w"), indent=2)
-    mbsc.get_cgp_code_flat(open(f"mbsc3b/{row.uname}_mbsc.cgp", "w"))
-    mbstc.get_cgp_code_flat(open(f"mbsc3b/{row.uname}_mbstc.cgp", "w"))
-    mbstc.get_v_code_flat(open(f"mbsc3b/{row.uname}_mbstc.v", "w"))
-#%%%
-# 2-bit versions
-parsedCMP = []
-
-multibit_datasets = ["breastcancer2b", "redwine2b", "vertebral2b", "seeds2b"]
-multibit_datasets += ["pendigits", "cardio2b", "whitewine2b"]
-multibit_datasets = ["pendigits2b"]
-multibit_datasets = [ "arrhythmia2b_v2", "arrhythmia2b_v1", "vertebral2b_v2" ]
-for i, row in df.query("dataset in @multibit_datasets").iterrows():
-    cnf = "".join(x for x,_ in row.features)
-    print(row)
-    print(cnf)
-
-    mbs = MultibitSum(2, cnf)
-    mbsc = MultibitSumCompare(2, cnf)
-    mbstc = MultibitSumTreeCompare(2, cnf)
-
-    mbs.get_cgp_code_flat(open(f"mbsc2b/{row.uname}_mbs.cgp", "w"))
-    open(f"mbsc2b/{row.uname}_conf.txt", "w").write(cnf)
-    row.to_json(open(f"mbsc2b/{row.uname}.json", "w"), indent=2)
-    mbsc.get_cgp_code_flat(open(f"mbsc2b/{row.uname}_mbsc.cgp", "w"))
-    mbstc.get_cgp_code_flat(open(f"mbsc2b/{row.uname}_mbstc.cgp", "w"))
-    mbstc.get_v_code_flat(open(f"mbsc2b/{row.uname}_mbstc.v", "w"))
-    
-
-
-#%%%
-# 1-bit versions
-parsedCMP = []
-onebit_datasets = ['arrhythmia', 'breastcancer', 'cardio', 'redwine', 'whitewine']
-onebit_datasets += ["breastcancer1b", "pendigits1b", "seeds1b", "vertebral1b"]
-onebit_datasets = ["redwine1b"]
-for i, row in df.query("dataset in @onebit_datasets").iterrows():
-    cnf = "".join(x for x,_ in row.features)
-    print(row)
-    print(cnf)
-
-    mbs = MultibitSum(1, cnf)
-    mbsc = MultibitSumCompare(1, cnf)
-    mbstc = MultibitSumTreeCompare(1, cnf)
-
-    mbs.get_cgp_code_flat(open(f"mbsc1b/{row.uname}_mbs.cgp", "w"))
-    open(f"mbsc1b/{row.uname}_conf.txt", "w").write(cnf)
-    row.to_json(open(f"mbsc1b/{row.uname}.json", "w"), indent=2)
-    #mbsc.get_cgp_code_flat(open(f"mbsc2b/{row.uname}_mbsc.cgp", "w"))
-    mbstc.get_cgp_code_flat(open(f"mbsc1b/{row.uname}_mbstc.cgp", "w"))
-    mbstc.get_v_code_flat(open(f"mbsc1b/{row.uname}_mbstc.v", "w"))
-
-# %%
-mbs(1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1)
-# %%
-from ariths_gen.core.cgp_circuit import UnsignedCGPCircuit
-mbs2 = UnsignedCGPCircuit(open("mbsc/pendigits_0_mbs.cgp", "r").read(), [4] * 10)
-# %%
-from ariths_gen.core.logic_gate_circuits import OneInputLogicGate
-mbs.get_circuit_wires()
-
-";".join([g.get_triplet_cgp(
-            a_id=mbs.get_circuit_wire_index(g.a), out_id=mbs.get_circuit_wire_index(g.out)) if isinstance(g, OneInputLogicGate) else
-                       g.get_triplet_cgp(a_id=mbs.get_circuit_wire_index(g.a), b_id=mbs.get_circuit_wire_index(g.b), out_id=mbs.get_circuit_wire_index(g.out)) for g in mbs.circuit_gates])
-
-# %%
-first = mbs.circuit_gates[0]
-first
-# %%
-first
-
-#%%%
-mbs.get_circuit_wires()
-
-vv = [g for g in mbs.circuit_gates if hasattr(g, "b") and mbs.get_circuit_wire_index(g.b) == 42]
-vv
-# %%
-sel = vv[0].b
-sel
-#%%
-sel.is_constant()
-# %%
-list(filter(lambda x: x[0] == vv[0].b, mbs.circuit_wires))
-
-# %%
