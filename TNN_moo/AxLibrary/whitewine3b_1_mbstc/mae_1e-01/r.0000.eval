@@ -1,0 +1,13 @@
+inputs 15
+# reference circuits/mbsc3b/whitewine3b_1_mbstc.cgp loaded at 0.003993
+# test  res_mbsc3b/whitewine3b_1_mbstc/mae_1e-01/r.0000.cgp loaded at 0.00404
+# subtract created at 0.018156
+Signed: 0
+Core 1 mae: 0.116882
+Core 1 wc: 6
+EP: 0.0941162
+Core 1 emae: 1.24189
+# finished at 0.018447
+Area (nodes): 33
+Area (pdk45): 74.1494
+Area (egfet): 159.869

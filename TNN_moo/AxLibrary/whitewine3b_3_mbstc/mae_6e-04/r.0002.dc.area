@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:12:59 2024
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    PPDK_Standard_Library_0.6V_25C_TYP_X1 (File: /homes/kazi/mrazek/bdd-popcount/lib/egfet/db/EGFET_0.6V.db)
+
+Number of ports:                           19
+Number of nets:                           117
+Number of cells:                           99
+Number of combinational cells:             99
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         28
+Number of references:                       6
+
+Combinational area:           44749178.000000
+Buf/Inv area:                  6395760.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:              44749178.000000
+Total area:                 undefined
+1

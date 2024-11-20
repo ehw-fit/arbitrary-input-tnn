@@ -1,0 +1,36 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:16:57 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_c[2] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_c[2] (in)                          0.00       0.00 f
+  U18/Y (OR2X1)                        3146719.50 3146719.50 f
+  U19/Y (NAND2X1)                      611762.50  3758482.00 r
+  U11/Y (AND2X1)                       2539716.50 6298198.50 r
+  U12/Y (INVX1)                        1297556.50 7595755.00 f
+  U20/Y (NAND2X1)                      952737.00  8548492.00 r
+  U21/Y (NAND2X1)                      2660633.00 11209125.00 f
+  cgp_out[0] (out)                         0.00   11209125.00 f
+  data arrival time                               11209125.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

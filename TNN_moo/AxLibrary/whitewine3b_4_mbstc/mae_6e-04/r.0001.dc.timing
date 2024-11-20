@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:14:43 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_e[1] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_e[1] (in)                          0.00       0.00 f
+  U75/Y (XNOR2X1)                      8724056.00 8724056.00 f
+  U76/Y (INVX1)                        -704740.50 8019315.50 r
+  U72/Y (XNOR2X1)                      8160406.50 16179722.00 r
+  U71/Y (INVX1)                        1522500.00 17702222.00 f
+  U70/Y (XNOR2X1)                      8734722.00 26436944.00 f
+  U69/Y (INVX1)                        -669214.00 25767730.00 r
+  U93/Y (NOR2X1)                       1347494.00 27115224.00 f
+  U97/Y (NOR2X1)                       970096.00  28085320.00 r
+  U98/Y (NAND2X1)                      2552598.00 30637918.00 f
+  U112/Y (NOR2X1)                      975568.00  31613486.00 r
+  U67/Y (AND2X1)                       2269690.00 33883176.00 r
+  U68/Y (INVX1)                        1248796.00 35131972.00 f
+  U118/Y (NOR2X1)                      1419856.00 36551828.00 r
+  U119/Y (INVX1)                       1212060.00 37763888.00 f
+  U120/Y (NAND2X1)                     952992.00  38716880.00 r
+  U121/Y (NAND2X1)                     1483928.00 40200808.00 f
+  U123/Y (NAND2X1)                     609552.00  40810360.00 r
+  cgp_out[0] (out)                         0.00   40810360.00 r
+  data arrival time                               40810360.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:11:21 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_e[1] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  input_e[1] (in)                          0.00       0.00 r
+  U82/Y (XNOR2X1)                      8167973.50 8167973.50 r
+  U83/Y (INVX1)                        1437172.50 9605146.00 f
+  U89/Y (XNOR2X1)                      8734376.00 18339522.00 f
+  U88/Y (INVX1)                        -662190.00 17677332.00 r
+  U80/Y (XNOR2X1)                      8144142.00 25821474.00 r
+  U81/Y (INVX1)                        1437172.00 27258646.00 f
+  U76/Y (XNOR2X1)                      8734378.00 35993024.00 f
+  U77/Y (INVX1)                        -676564.00 35316460.00 r
+  U100/Y (NAND2X1)                     2261004.00 37577464.00 f
+  U64/Y (AND2X1)                       3544832.00 41122296.00 f
+  U65/Y (INVX1)                        -564036.00 40558260.00 r
+  U108/Y (OR2X1)                       2695112.00 43253372.00 r
+  U109/Y (NAND2X1)                     1534056.00 44787428.00 f
+  U58/Y (NAND2X1)                      625008.00  45412436.00 r
+  U119/Y (NOR2X1)                      1559344.00 46971780.00 f
+  U120/Y (INVX1)                       -66640.00  46905140.00 r
+  U121/Y (NAND2X1)                     2277232.00 49182372.00 f
+  U126/Y (NAND2X1)                     619316.00  49801688.00 r
+  U128/Y (AND2X1)                      3555400.00 53357088.00 r
+  cgp_out[0] (out)                         0.00   53357088.00 r
+  data arrival time                               53357088.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

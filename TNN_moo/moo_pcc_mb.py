@@ -1,4 +1,25 @@
+
 # %%%
+"""
+This module performs multiobjective optimization for assigning components from the AxLibrary to the TNNs.
+It optimizes two objectives: area and accuracy drop.
+Classes:
+    TNNopt: Defines the optimization problem for TNNs.
+Functions:
+    main(tnn, bw=2, n_gen=50, res_dir=None, save_history=False): Main function to run the optimization.
+TNNopt:
+    __init__(self, tnn, bw, circset = "../../scripts_mb/pareto/2b_mbsc_mae.pkl.gz", **kwargs):
+        Initializes the TNNopt problem with the given TNN, bit width, and circuit set.
+    _get_circuit(self, ks, idx):
+        Retrieves the circuit from the subset based on the key and index.
+    _get_cgp_circuit(self, fn, bw):
+        Retrieves or loads the CGP circuit based on the filename and bit width.
+    _evaluate(self, x, out, *args, **kwargs):
+        Evaluates the given solution and computes the objectives (accuracy drop and area).
+main(tnn, bw=2, n_gen=50, res_dir=None, save_history=False):
+    Runs the multiobjective optimization using NSGA2 algorithm.
+    Plots and saves the Pareto front if res_dir is specified.
+"""
 import os
 import numpy as np
 
@@ -25,7 +46,7 @@ class TNNopt(ElementwiseProblem):
         self.bw = bw
         # Load circuits absolute path of "../../scripts/data.pc.pareto.zero.pkl.gz"
         circuits = os.path.join(os.path.dirname(
-            __file__), "../../scripts/data.pc.pareto.zero.pkl.gz")
+            __file__), "AxLibrary/popcount.pkl.gz")
         
         self.circuits_pc = pd.read_pickle(circuits)
         self.circuits_pc.set_index(self.circuits_pc.circuit, inplace=True)
@@ -101,12 +122,12 @@ class TNNopt(ElementwiseProblem):
             
             if k.startswith("popcount_"):
                 area += c["egfet_area"]
-                conf[k] = self._get_cgp_circuit("../" + c["circuit"], [c["bw"]])
+                conf[k] = self._get_cgp_circuit(c["circuit"], [c["bw"]])
                 #conf["permutation"][k] = x["perm_" + k]
             else:
                 area += c["egfet_area"]
                 #print(c)
-                cgpcirc = self._get_cgp_circuit("../" + c["circuit"], [self.bw] * self.bws[k])
+                cgpcirc = self._get_cgp_circuit(c["circuit"], [self.bw] * self.bws[k])
                 if "permutation" in c:
           #          print("Permutation found", c["permutation"])
                     conf[f"{k}"] = PermutationWrapper(func = cgpcirc, permutation = c["permutation"])
@@ -125,10 +146,10 @@ class TNNopt(ElementwiseProblem):
         # out["G"] = x[:, 0] + x[:, 1] - 10
 
 
-def main(circset, tnn, bw=2, n_gen=50, res_dir=None, save_history=False):
+def main(tnn, bw=2, n_gen=50, res_dir=None, save_history=False):
     global res, resdir
 
-    problem = TNNopt(tnn, bw=bw, circset=f"../../scripts_mb/pareto/{bw}b_mbstc_{circset}.pkl.gz")
+    problem = TNNopt(tnn, bw=bw, circset=f"AxLibrary/mbstc{bw}b.pkl.gz")
 
     algorithm = NSGA2(pop_size=50,
                       sampling=MixedVariableSampling(),
@@ -153,10 +174,10 @@ def main(circset, tnn, bw=2, n_gen=50, res_dir=None, save_history=False):
         plot.save(os.path.join(res_dir, "pareto.png"))
 
     print("Best solution found: %s" % res.X)
-    print("Function value: %s" % res.F)
+    print("Function value: (accuracy_drop, est_area) %s" % res.F)
 
     # export res to pickle
     problem.evaluate(res.X, return_values_of=["F", "G"])
 
 if __name__ == "__main__":
-    main("mae", tnns.TNNBreastcancer2b(), 2, 50, f"res", save_history = False)
+    main(tnns.TNNWhitewine3b(), 3, 50, f"res", save_history = False)

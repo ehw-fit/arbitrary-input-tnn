@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: N-2017.09-SP5
+Date   : Mon Aug 12 11:51:12 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_a[2] (input port)
+  Endpoint: cgp_out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_a[2] (in)                          0.00       0.00 f
+  U84/Y (OR2X1)                        3146719.50 3146719.50 f
+  U85/Y (NAND2X1)                      1097787.50 4244507.00 r
+  U87/Y (INVX1)                        936811.00  5181318.00 f
+  U51/Y (NAND2X1)                      680002.50  5861320.50 r
+  U62/Y (AND2X1)                       2813342.50 8674663.00 r
+  U63/Y (INVX1)                        1162185.00 9836848.00 f
+  U69/Y (XNOR2X1)                      8733656.00 18570504.00 f
+  U68/Y (INVX1)                        -649552.00 17920952.00 r
+  U76/Y (XNOR2X1)                      8160018.00 26080970.00 r
+  U77/Y (INVX1)                        1508696.00 27589666.00 f
+  U67/Y (XNOR2X1)                      8510478.00 36100144.00 f
+  U66/Y (INVX1)                        -697568.00 35402576.00 r
+  U56/Y (NAND2X1)                      1533888.00 36936464.00 f
+  U53/Y (NAND2X1)                      633560.00  37570024.00 r
+  U72/Y (AND2X1)                       2775140.00 40345164.00 r
+  U73/Y (INVX1)                        1092096.00 41437260.00 f
+  U107/Y (NAND2X1)                     953152.00  42390412.00 r
+  U108/Y (NAND2X1)                     2393512.00 44783924.00 f
+  cgp_out[2] (out)                         0.00   44783924.00 f
+  data arrival time                               44783924.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

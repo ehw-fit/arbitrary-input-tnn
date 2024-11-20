@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:12:47 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_d[1] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_d[1] (in)                          0.00       0.00 f
+  U113/Y (XNOR2X1)                     8724056.00 8724056.00 f
+  U114/Y (INVX1)                       -704740.50 8019315.50 r
+  U145/Y (XNOR2X1)                     8160406.50 16179722.00 r
+  U144/Y (INVX1)                       1465276.00 17644998.00 f
+  U148/Y (XNOR2X1)                     8744614.00 26389612.00 f
+  U149/Y (INVX1)                       -705230.00 25684382.00 r
+  U160/Y (NAND2X1)                     1524524.00 27208906.00 f
+  U162/Y (NAND2X1)                     1096534.00 28305440.00 r
+  U169/Y (INVX1)                       1466212.00 29771652.00 f
+  U139/Y (XNOR2X1)                     8510044.00 38281696.00 f
+  U138/Y (INVX1)                       -697612.00 37584084.00 r
+  U193/Y (NOR2X1)                      1347556.00 38931640.00 f
+  U194/Y (NOR2X1)                      969808.00  39901448.00 r
+  U97/Y (AND2X1)                       2271436.00 42172884.00 r
+  U98/Y (INVX1)                        1246008.00 43418892.00 f
+  U196/Y (NAND2X1)                     952912.00  44371804.00 r
+  U197/Y (NOR2X1)                      1314144.00 45685948.00 f
+  U90/Y (NAND2X1)                      653100.00  46339048.00 r
+  U201/Y (OR2X1)                       7068888.00 53407936.00 r
+  U202/Y (NAND2X1)                     1530168.00 54938104.00 f
+  cgp_out[0] (out)                         0.00   54938104.00 f
+  data arrival time                               54938104.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

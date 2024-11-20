@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: N-2017.09-SP5
+Date   : Mon Aug 12 12:10:07 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_a[10]
+              (input port)
+  Endpoint: cgp_out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  input_a[10] (in)                         0.00       0.00 r
+  U50/Y (NAND2X1)                      2167682.50 2167682.50 f
+  U95/Y (NAND2X1)                      623589.00  2791271.50 r
+  U96/Y (NAND2X1)                      2436762.50 5228034.00 f
+  U97/Y (NAND2X1)                      633725.00  5861759.00 r
+  U56/Y (AND2X1)                       2782686.00 8644445.00 r
+  U57/Y (INVX1)                        1163716.00 9808161.00 f
+  U74/Y (XNOR2X1)                      8733663.00 18541824.00 f
+  U75/Y (INVX1)                        -640590.00 17901234.00 r
+  U73/Y (XNOR2X1)                      8160002.00 26061236.00 r
+  U72/Y (INVX1)                        1499136.00 27560372.00 f
+  U69/Y (XNOR2X1)                      8734652.00 36295024.00 f
+  U68/Y (INVX1)                        -697680.00 35597344.00 r
+  U64/Y (AND2X1)                       2961076.00 38558420.00 r
+  U65/Y (INVX1)                        1249428.00 39807848.00 f
+  U54/Y (NAND2X1)                      957912.00  40765760.00 r
+  U62/Y (AND2X1)                       2775788.00 43541548.00 r
+  U63/Y (INVX1)                        1091352.00 44632900.00 f
+  U108/Y (NAND2X1)                     674336.00  45307236.00 r
+  U109/Y (NAND2X1)                     2393092.00 47700328.00 f
+  cgp_out[2] (out)                         0.00   47700328.00 f
+  data arrival time                               47700328.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

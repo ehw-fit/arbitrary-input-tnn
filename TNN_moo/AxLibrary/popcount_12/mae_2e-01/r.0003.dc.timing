@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: N-2017.09-SP5
+Date   : Mon Aug 12 11:51:07 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_a[10]
+              (input port)
+  Endpoint: cgp_out[2] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_a[10] (in)                         0.00       0.00 f
+  U66/Y (NAND2X1)                      973925.19  973925.19 r
+  U98/Y (NAND2X1)                      1510640.75 2484566.00 f
+  U87/Y (AND2X1)                       3538028.00 6022594.00 f
+  U88/Y (INVX1)                        -365891.00 5656703.00 r
+  U79/Y (AND2X1)                       2414313.50 8071016.50 r
+  U80/Y (INVX1)                        1094986.50 9166003.00 f
+  U73/Y (NAND2X1)                      963582.00  10129585.00 r
+  U91/Y (XNOR2X1)                      8148667.00 18278252.00 r
+  U92/Y (INVX1)                        1456138.00 19734390.00 f
+  U127/Y (NAND2X1)                     952056.00  20686446.00 r
+  U128/Y (NAND2X1)                     2425098.00 23111544.00 f
+  U95/Y (XNOR2X1)                      8764622.00 31876166.00 f
+  U96/Y (INVX1)                        -657678.00 31218488.00 r
+  U81/Y (AND2X1)                       2418168.00 33636656.00 r
+  U82/Y (INVX1)                        1091920.00 34728576.00 f
+  U135/Y (NAND2X1)                     953156.00  35681732.00 r
+  U136/Y (NAND2X1)                     2419872.00 38101604.00 f
+  cgp_out[2] (out)                         0.00   38101604.00 f
+  data arrival time                               38101604.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

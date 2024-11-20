@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Wed Aug 28 20:19:50 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_d[0] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 f
+  input_d[0] (in)                          0.00       0.00 f
+  U64/Y (NAND2X1)                      973796.31  973796.31 r
+  U77/Y (XNOR2X1)                      8154398.50 9128195.00 r
+  U78/Y (INVX1)                        1488864.00 10617059.00 f
+  U86/Y (XNOR2X1)                      8734531.00 19351590.00 f
+  U85/Y (INVX1)                        -692568.00 18659022.00 r
+  U87/Y (XNOR2X1)                      8147334.00 26806356.00 r
+  U88/Y (INVX1)                        1439914.00 28246270.00 f
+  U65/Y (NAND2X1)                      679192.00  28925462.00 r
+  U91/Y (AND2X1)                       2536700.00 31462162.00 r
+  U92/Y (INVX1)                        1300214.00 32762376.00 f
+  U79/Y (XNOR2X1)                      8508688.00 41271064.00 f
+  U80/Y (INVX1)                        -698048.00 40573016.00 r
+  U84/Y (XNOR2X1)                      8160392.00 48733408.00 r
+  U83/Y (INVX1)                        1457104.00 50190512.00 f
+  U115/Y (NOR2X1)                      960512.00  51151024.00 r
+  U121/Y (NOR2X1)                      1323064.00 52474088.00 f
+  U123/Y (NAND2X1)                     902872.00  53376960.00 r
+  U61/Y (NAND2X1)                      2727748.00 56104708.00 f
+  U127/Y (NOR2X1)                      1410604.00 57515312.00 r
+  U128/Y (INVX1)                       1213284.00 58728596.00 f
+  U129/Y (NAND2X1)                     952988.00  59681584.00 r
+  U133/Y (NAND2X1)                     1483928.00 61165512.00 f
+  U135/Y (NAND2X1)                     612788.00  61778300.00 r
+  cgp_out[0] (out)                         0.00   61778300.00 r
+  data arrival time                               61778300.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

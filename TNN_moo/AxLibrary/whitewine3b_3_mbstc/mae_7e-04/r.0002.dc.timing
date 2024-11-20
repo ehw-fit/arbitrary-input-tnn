@@ -1,0 +1,51 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : cgp
+Version: V-2023.12
+Date   : Mon Sep  2 21:22:12 2024
+****************************************
+
+Operating Conditions: TT   Library: PPDK_Standard_Library_0.6V_25C_TYP_X1
+Wire Load Model Mode: top
+
+  Startpoint: input_d[0] (input port)
+  Endpoint: cgp_out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  input_d[0] (in)                          0.00       0.00 r
+  U144/Y (NAND2X1)                     2561338.25 2561338.25 f
+  U147/Y (INVX1)                       -658533.62 1902804.62 r
+  U121/Y (XNOR2X1)                     8144144.50 10046949.00 r
+  U122/Y (INVX1)                       1437172.00 11484121.00 f
+  U141/Y (XNOR2X1)                     8749295.00 20233416.00 f
+  U126/Y (XNOR2X1)                     8993352.00 29226768.00 f
+  U125/Y (INVX1)                       -663300.00 28563468.00 r
+  U183/Y (NOR2X1)                      1347482.00 29910950.00 f
+  U184/Y (NOR2X1)                      969826.00  30880776.00 r
+  U186/Y (NAND2X1)                     2550682.00 33431458.00 f
+  U93/Y (AND2X1)                       3540690.00 36972148.00 f
+  U94/Y (INVX1)                        -561376.00 36410772.00 r
+  U188/Y (NOR2X1)                      1347260.00 37758032.00 f
+  U191/Y (NOR2X1)                      969808.00  38727840.00 r
+  U99/Y (AND2X1)                       2271436.00 40999276.00 r
+  U100/Y (INVX1)                       1246008.00 42245284.00 f
+  U193/Y (NAND2X1)                     952880.00  43198164.00 r
+  U195/Y (AND2X1)                      3538976.00 46737140.00 r
+  U97/Y (AND2X1)                       2282820.00 49019960.00 r
+  U98/Y (INVX1)                        1233892.00 50253852.00 f
+  U197/Y (NAND2X1)                     947688.00  51201540.00 r
+  cgp_out[0] (out)                         0.00   51201540.00 r
+  data arrival time                               51201540.00
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
