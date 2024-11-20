@@ -1,6 +1,5 @@
 about-time==4.2.1
 alive-progress==3.2.0
-ariths_gen @ git+https://github.com/ehw-fit/ariths-gen.git@63a11f244c2c746d43f3a627ecfa9c72cc261d01
 autograd==1.7.0
 cma==3.2.2
 contourpy==1.3.1
