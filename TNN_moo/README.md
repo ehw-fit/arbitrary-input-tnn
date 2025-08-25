@@ -1,6 +1,5 @@
 # Multiobjective optimization methodology
-This folder shows an example of the automated approximation of TNN with arbitrary inputs. It is adapted to 
-
+This folder shows an example of the automated approximation of TNN with arbitrary inputs. 
 The scripts are compatible with the requirements in [requirements.txt](../requirements.txt)
 
 ```sh
