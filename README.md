@@ -2,7 +2,7 @@
 
 This repository contains the implementation and experimental artifacts accompanying the paper:
 
-**MRAZEK Vojtech, BALASKAS Konstantionos, DUARTE Carolina Lozano Paula, VAšíčEK Zdenek, TAHOORI Mehdi and ZERVAKIS Georgios.** *Arbitrary Precision Printed Ternary Neural Networks with Holistic Evolutionary Approximation.* IEEE Transactions on Circuits and Systems for Artificial Intelligence, 2025, pp. 13. ISSN 2996-6647.
+**MRAZEK Vojtech, BALASKAS Konstantinos, DUARTE Carolina Lozano Paula, VAšíčEK Zdenek, TAHOORI Mehdi and ZERVAKIS Georgios.** *Arbitrary Precision Printed Ternary Neural Networks with Holistic Evolutionary Approximation.* IEEE Transactions on Circuits and Systems for Artificial Intelligence, 2025, pp. 13. ISSN 2996-6647.
 
 ```bibtex
 @ARTICLE{FITPUB13265,
